@@ -116,13 +116,13 @@
 
 // /****************************************** Q8 ************************************************/
 // function displayingNo(startNo,endNo){
-//     for (x=startNo; x<=endNo; x++){
-//         document.write(x+"<br>");
+//     for (let i=startNo; i<=endNo; i++){
+//         document.write(i+"<br>");
 //     }
 // }
 
-// let startNo=+prompt("Enter  first number")
-// let endNo=+prompt("Enter  second number")
+// let startNo=+prompt("Enter first number")
+// let endNo=+prompt("Enter second number")
 // displayingNo(startNo,endNo)
 
 // /**************************************************** Q9 *******************************************/
