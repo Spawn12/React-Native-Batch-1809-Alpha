@@ -145,10 +145,16 @@
 
 
 // /***************************************************** Q11 ***************************************************/
-// // function findlargetNo(value){
-
-// // }
-
+// function findlargetNo(lengthOfNo){
+//     let noArr=[]
+//     for(let i=0;i<lengthOfNo;i++){
+//         var no=+prompt("Enter Number")
+//         noArr.push(no)
+//     }
+//     return noArr.reduce(function(x,y){return x>y ? x:y})
+// }
+// var lengthOfNo=+prompt("How many times you want to enter No")
+// alert("The max no is : "+findlargetNo(lengthOfNo))
 // /************************************************* Q12 *******************************************************/
 // function areaOfRectangle(width,height){
 //     let area=width*height
