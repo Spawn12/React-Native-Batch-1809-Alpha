@@ -9,8 +9,6 @@ var actions={
     },
 
     removeIteam:function(){
-        liTag=document.getElementsByTagName('LI')
-        pTag=document.getElementsByTagName('P')
         targetLiElement=this.parentNode.parentNode
         targetLiElement.remove()                        //OR targetLiElement.parentNode.removeChild(targetLiElement)
     },
@@ -19,7 +17,7 @@ var actions={
         var ulId = document.getElementById("iteamList");
         var list=document.getElementsByTagName('LI')       //OR 
         while(ulId.hasChildNodes()){                     // for (let i=0 ; i<list.length ; i++){
-        list[0].remove()                                 //     list[i].style.display='none'
+            list[0].remove()                                 //     list[i].style.display='none'
             arrValues=[]                                // }
         }                                               // arrValues=[] 
     },
@@ -32,12 +30,11 @@ var actions={
         //Creating p element and inserting textnode in it
         var paraElement=document.createElement('P')
         paraElement.appendChild(textElement)
-
+        
         //Cearting onclick function for delete line on text
         paraElement.onclick=function(){
-            var delElement=document.createElement('DEL')
             delElement.appendChild(textElement)
-            paraElement.appendChild(delElement) 
+            paraElement.appendChild(delElement)                    
         }
 
         //inserting p elemnt in li element
