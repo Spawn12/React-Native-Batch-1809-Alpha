@@ -1,31 +1,29 @@
-
+let arrValues=[]
 var actions={
-    arrValues:[],
     addIteam:function(){
         let values=document.getElementById('input').value
-        if(this.arrValues.includes(values)!==true && values !==""){
-            this.arrValues.push(values)
+        if(arrValues.includes(values)!==true && values !==""){
+            arrValues.push(values)
             this.showIteam(values)
-        }else{alert("This value is already added to list")}
-        console.log(this.arrValues);
+        }else{alert('This element is alreay added')}
     },
 
     removeIteam:function(){
+        liTag=document.getElementsByTagName('LI')
+        pTag=document.getElementsByTagName('P')
         targetLiElement=this.parentNode.parentNode
-        targetLiElement.parentNode.removeChild(targetLiElement)
-        console.log(this.arrValues)
-        // x.style.display='none'
+        targetLiElement.remove()                        //OR targetLiElement.parentNode.removeChild(targetLiElement)
     },
     
     resetIteam:function(){
-        liTag=document.getElementsByTagName('LI')
-        for (let i=0 ; i<liTag.length ; i++){
-            liTag[i].style.display="none"
-            // liTag.parentNode.removeChild(liTag)
-            
-        }
-        this.arrValues=[]
+        var ulId = document.getElementById("iteamList");
+        var list=document.getElementsByTagName('LI')       //OR 
+        while(ulId.hasChildNodes()){                     // for (let i=0 ; i<list.length ; i++){
+        list[0].remove()                                 //     list[i].style.display='none'
+            arrValues=[]                                // }
+        }                                               // arrValues=[] 
     },
+
     showIteam:function(singleValue){
         //Creating li element and creating text node
         var liElement=document.createElement('LI')
@@ -35,15 +33,21 @@ var actions={
         var paraElement=document.createElement('P')
         paraElement.appendChild(textElement)
 
+        //Cearting onclick function for delete line on text
+        paraElement.onclick=function(){
+            var delElement=document.createElement('DEL')
+            delElement.appendChild(textElement)
+            paraElement.appendChild(delElement) 
+        }
+
         //inserting p elemnt in li element
         liElement.appendChild(paraElement)
         
         //Assigning attribues to li element 
         liElement.setAttribute('id','list')
 
-        //Creating span element and button element , styling span element
+        //Creating span element and button element 
         var spanElement=document.createElement('SPAN')
-        // spanElement.style="padding-left:5%"
         var btnElement=document.createElement('INPUT')
 
         //Assigning d/f attribute of button
@@ -62,8 +66,6 @@ var actions={
 
         //Adding list element by calling id of ul in html
         document.getElementById('iteamList').appendChild(liElement) 
-
     },
     
-
 }
