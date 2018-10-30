@@ -1,16 +1,23 @@
 let arrValues=[]
 var actions={
+    pId:0,
     addIteam:function(){
         let values=document.getElementById('input').value
-        if(arrValues.includes(values)!==true && values !==""){
+        if(arrValues.includes(values)!==true && values !=="" ){
             arrValues.push(values)
             this.showIteam(values)
+            this.pId++
         }else{alert('This element is alreay added')}
     },
 
     removeIteam:function(){
+        /******** removing Element from DOM **********/
         targetLiElement=this.parentNode.parentNode
         targetLiElement.remove()                        //OR targetLiElement.parentNode.removeChild(targetLiElement)
+
+        /******** removing Element from Array **********/
+        indexValue=arrValues.indexOf(targetLiElement.textContent)
+        arrValues.splice(indexValue)
     },
     
     resetIteam:function(){
@@ -23,6 +30,7 @@ var actions={
     },
 
     showIteam:function(singleValue){
+        // this.pId++
         //Creating li element and creating text node
         var liElement=document.createElement('LI')
         var textElement=document.createTextNode(singleValue)
@@ -30,11 +38,15 @@ var actions={
         //Creating p element and inserting textnode in it
         var paraElement=document.createElement('P')
         paraElement.appendChild(textElement)
-        
+
+        //Assigning attribues to p element
+        paraElement.setAttribute('id',this.pId)
+
         //Cearting onclick function for delete line on text
         paraElement.onclick=function(){
+            delElement=document.createElement('DEL')
             delElement.appendChild(textElement)
-            paraElement.appendChild(delElement)                    
+            paraElement.appendChild(delElement) 
         }
 
         //inserting p elemnt in li element
