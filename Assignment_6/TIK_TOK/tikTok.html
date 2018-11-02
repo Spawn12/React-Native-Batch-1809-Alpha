@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TTO</title>
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <link rel="stylesheet" href="tikTok.css">
+</head>
+<body>
+    
+    <div id="title" >
+        <h1 >TIK-TOK-TOE</h1>
+    </div>
+    <div class="playersName">
+        <div id="userName">
+            <span class="line_1"><img src="images/user.png" alt="username" class="icons">
+                <input type="text" required name="username" id="UsernameX" placeholder="UsernameX" value=""></span><br>
+            <span class="line_2"><img src="images/user.png" alt="pwd" class="icons">
+                <input type="text" required name="pwd" id="UsernameO" placeholder="UsernameO" class="box" ></span> <br>
+            <input type="submit" value="PLAY" id="login" onclick="actions.playGameView()"> <br> <br> <br> 
+        
+        </div>
+    </div>
+    <div class="palyingField" >
+        <center><h2 id="status">X Turn</h2></center><br>
+        <center>
+        <table >
+            <span style="float:left;margin-left: 15%"><h2 id="playerNameX"></h2><p id="scoreX">0</p></span>
+            <span style="float:right;margin-right: 15%"><h2 id="playerNameO"></h2><p id="scoreO">0</p ></span>
+            
+            <tr>
+                <td id="td1" onclick='actions.write(this.id)'></td>
+                <td id="td2" onclick="actions.write(this.id)"></td>
+                <td id="td3" onclick="actions.write(this.id)"></td>
+            </tr>
+            <tr>
+                <td id="td4" onclick="actions.write(this.id)"></td>
+                <td id="td5" onclick="actions.write(this.id)"></td>
+                <td id="td6" onclick="actions.write(this.id)"></td>
+            </tr>
+            <tr>
+                <td id="td7" onclick="actions.write(this.id)"></td>
+                <td id="td8" onclick="actions.write(this.id)"></td>
+                <td id="td9" onclick="actions.write(this.id)"></td>
+            </tr>
+        </table>
+        </center>
+    <input type="button" value="Re-Play" id='restartBtn' onclick="actions.restartMatch()">
+    </div>
+   
+
+</body>
+<script src="tikTok.js"></script>
+</html>
